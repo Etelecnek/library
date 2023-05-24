@@ -10,7 +10,30 @@
         <div class="header">
             <h1>Library</h1>
         </div>
-        <div class="addbook"><input type="button" id="addbtn" value="+ Add Book"></div>
-        <div class="body"></div>
+        <div class="addbook">
+            <input type="button" id="addbtn" value="+ Add Book" onclick="addbook()">
+            <div id="addnewbook">
+                <form action=""  onsubmit="submitText()">
+                    <h2>Add new book</h2>
+                    <div class="book">
+                        <input id="title" class="inputtext" type="text" placeholder="Title" required>
+                    </div>
+                    <div class="book">
+                        <input id="author" class="inputtext" type="text" placeholder="Author" required>
+                    </div>
+                    <div class="book">
+                        <input id="pages" class="inputtext" type="text" placeholder="Pages" required>
+                    </div>
+                    <div class="book">
+                        <label for="">Have you read it?</label>
+                        <input id="checkRead" type="checkbox" onclick="readCheckbox()">
+                    </div>
+                    <div class="submit">
+                        <input id="submit" type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="body"></div>
     </body>
 </html>

@@ -38,7 +38,53 @@ body {
     background-color: rgb(120, 136, 120);
 }
 
-.body {
+#body {
     grid-row: 3/10;
-    background-color: rgb(165, 185, 165);    
+    background-color: rgb(165, 185, 165);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#addnewbook {
+    display: none;
+    color: white;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 43.5%;
+    background-color: green;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.book {
+    margin-top: 20px;
+}
+
+.inputtext {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+
+.submit {
+    margin-top: 20px;
+}
+
+#submit {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+}
+
+.createdBook {
+    margin-top: 25px;
+    margin-left: 25px;
+    height: 100px;
+    width: 50px;
+    background-color: white;
 }
