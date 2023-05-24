@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    display: grid;
+}
+
+.header {
+    background-color: green;
+    border-bottom: solid rgb(0, 88, 0);
+    color: white;
+}
+
+.addbook {
+    grid-row: 2;
+    background-color: rgb(165, 185, 165);
+    display: flex;
+    justify-content: center;
+}
+
+#addbtn {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(165, 185, 165);
+    color: white;
+    
+    font-size: x-large;
+    height: 50px;
+    padding: 10px;
+    margin: 25px;
+}
+
+#addbtn:hover {
+    background-color: rgb(120, 136, 120);
+}
+
+.body {
+    grid-row: 3/10;
+    background-color: rgb(165, 185, 165);    
+}
