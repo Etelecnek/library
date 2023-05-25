@@ -1,45 +1,67 @@
-
-
 function addbook() {
     document.getElementById("addnewbook").style.display="block";
 }
 
-const book = {
+const myLibrary = [
+    {
 
+    }
+];
+
+class Book { constructor(title, author, pages, status) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.status = status
+    }
 }
 
-function submitText() {
+Book.prototype.updateLibrary = function() {
+    const createBook = document.createElement('div')
+    createBook.setAttribute('class', 'createdBook')
+    const createtitle = document.createElement('p')
+    const createauthor = document.createElement('p')
+    const createpages = document.createElement('p')
+    const createreadBtn = document.createElement('button')
+    createreadBtn.setAttribute('id', 'readbutt')
+    const createremoveBtn = document.createElement('button')
+    createremoveBtn.setAttribute('id', 'remove')
+    createremoveBtn.textContent = 'Remove'
+    document.getElementById('body').appendChild(createBook)
+    createBook.appendChild(createtitle)
+    createBook.appendChild(createauthor)
+    createBook.appendChild(createpages)
+    createBook.appendChild(createreadBtn)
+    createBook.appendChild(createremoveBtn)
+    createtitle.textContent = this.title
+    createauthor.textContent = this.author
+    createpages.textContent = this.pages
+}
+
+const newBook = new Book(title, author, pages, status);
+let formTitle = document.querySelector('#title');
+let formAuthor = document.querySelector('#author');
+let formPages = document.querySelector('#pages');
+let formRead = document.querySelector('#checkRead');
+
+function submitForm() {
     event.preventDefault()
-    createBook()
-    
+    addBookToLibrary()
+    newBook.updateLibrary()
+    console.log(newBook)
+}
+const addBookToLibrary = () => {
+    newBook.title = formTitle.value;
+    newBook.author = formAuthor.value;
+    newBook.pages = formPages.value;
+    newBook.status = isRead();
+    myLibrary.push(newBook);
 }
 
-function setVariables() {
-
-}
-
-function createBook() {
-    const newbook = document.createElement('div')
-    newbook.setAttribute('class', 'createdBook')
-    const title = document.createElement('p')
-    const author = document.createElement('p')
-    const pages = document.createElement('p')
-    const readBtn = document.createElement('button')
-    readBtn.setAttribute('id', 'readbutt')
-    const removeBtn = document.createElement('button')
-    removeBtn.setAttribute('id', 'remove')
-    removeBtn.textContent = 'Remove'
-    document.getElementById('body').appendChild(newbook)
-    newbook.appendChild(title)
-    newbook.appendChild(author)
-    newbook.appendChild(pages)
-    newbook.appendChild(readBtn)
-    newbook.appendChild(removeBtn)
-    title.innerHTML = document.getElementById('title').value 
-    author.innerHTML = document.getElementById('author').value
-    pages.innerHTML = document.getElementById('pages').value
-    document.getElementById("addnewbook").style.display="none";
-    document.getElementById('title').value = "";
-    document.getElementById('author').value = "";
-    document.getElementById('pages').value = "";
+function isRead() {
+    if (formRead.checked == true) {
+        return true;
+    } else {
+        return false;
+    }
 }
