@@ -83,14 +83,19 @@ body {
 .createdBook {
     margin-top: 25px;
     margin-left: 25px;
-    height: 250px;
+    height: 300px;
     width: 300px;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(250, 255, 247);
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     font-size: xx-large;
+}
+
+.createdBook p {
+    margin-bottom: 20px;
 }
 
 #readbutt {
@@ -98,6 +103,17 @@ body {
     width: 250px;
     border: none;
     border-radius: 10px;
+    background-color: rgb(138, 255, 147);
+    margin-bottom: 20px;
+}
+
+#notreadbutt {
+    height: 50px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 135, 135);
+    margin-bottom: 20px;
 }
 
 #remove {
@@ -106,4 +122,5 @@ body {
     background-color: rgb(255, 135, 135);
     border: none;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
